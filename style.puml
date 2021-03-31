@@ -1,0 +1,243 @@
+@startuml
+
+!if (%not(%variable_exists("$FONTNAME")))
+!$FONTNAME = "Arial"
+!endif
+
+!if (%not(%variable_exists("$FONTSIZE")))
+!$FONTSIZE = 12
+!endif
+
+!ifdef CGI-DARK
+!$ACCENT = "e31937"
+!$ACCENTDARK = "991f3d"
+skinparam stereotypeCBackgroundColor $ACCENT
+!define DARKSTYLE
+!endif
+
+!ifdef CGI-LIGHT
+!$ACCENT = "e31937"
+!$ACCENTDARK = "991f3d"
+skinparam stereotypeCBackgroundColor $ACCENTDARK
+!define LIGHTSTYLE
+!endif
+
+!ifdef NS-DARK
+skinparam backgroundColor 777
+!$ACCENT = "e5be03"
+!$ACCENTDARK = "f2a200"
+skinparam stereotypeCBackgroundColor $ACCENT
+!define DARKSTYLE
+!endif!if (%not(%variable_exists("$FONTNAME")))
+!$FONTNAME = "Arial"
+!endif
+
+!if (%not(%variable_exists("$FONTSIZE")))
+!$FONTSIZE = 12
+!endif
+
+!ifdef CGI
+!$ACCENT = "e31937"
+!$ACCENT_FOREGROUND = "fff"
+!$BORDER = "000"
+!define BOXSTYLE
+!endif
+
+!ifdef NS
+!$ACCENT = "e5be03"
+!$ACCENT_FOREGROUND = "000"
+!$BORDER = "000"
+!define BOXSTYLE
+!endif
+
+!ifdef BOXSTYLE
+!$BACKGROUND = "fff"
+!$FOREGROUND = "000"
+
+skinparam padding 2
+skinparam backgroundColor eee
+skinparam stereotypeCBackgroundColor $BACKGROUND
+skinparam stereotypeCFontColor $FOREGROUND
+!endif
+
+!procedure font_style()
+  fontColor $FOREGROUND
+  fontName $FONTNAME
+  fontSize $FONTSIZE
+  stereotypeFontColor $FOREGROUND
+  stereotypeFontSize $FONTSIZE
+!endprocedure
+
+!procedure basic_style()
+  backgroundColor $BACKGROUND
+  borderColor $BORDER
+!endprocedure
+
+!procedure light_style()
+  backgroundColor $BACKGROUND
+  borderColor $ACCENT
+!endprocedure
+
+!procedure accent_style()
+  backgroundColor $BACKGROUND
+  borderColor $ACCENT
+!endprocedure
+
+!procedure arrow_style()
+  arrowColor $FOREGROUND
+  arrowFontName $FONTNAME
+  arrowFontColor $FOREGROUND
+  arrowFontSize $FONTSIZE
+!endprocedure
+
+' Class diagrams
+
+skinparam circledCharacter {
+  radius 10
+  fontSize $FONTSIZE
+  fontName $FONTNAME
+  fontColor $FOREGROUND
+}
+
+skinparam class {
+  basic_style()
+  font_style()
+  arrow_style()
+
+  headerBackgroundColor $ACCENT
+  fontColor $ACCENT_FOREGROUND
+  fontStyle italic
+  attributeFontColor $FOREGROUND
+  attributeFontSize $FONTSIZE
+  attributeFontStyle normal
+  attributeIconSize 0
+}
+
+' Sequence diagrams
+
+skinparam actor {
+  accent_style()
+  font_style()
+}
+
+skinparam participant {
+  basic_style()
+  font_style()
+}
+
+skinparam collections {
+  basic_style()
+  font_style()
+}
+
+skinparam SequenceBox{
+  light_style()
+  font_style()
+}
+
+' Component diagrams
+
+skinparam interface {
+  accent_style()
+  font_style()
+}
+
+skinparam component {
+  basic_style()
+  font_style()
+}
+
+skinparam node {
+  basic_style()
+  font_style()
+}
+
+skinparam database {
+  basic_style()
+  font_style()
+}
+
+skinparam queue {
+  basic_style()
+  font_style()
+}
+
+' Use Case diagrams
+
+skinparam usecase {
+  basic_style()
+  font_style()
+  arrow_style()
+}
+
+skinparam activity {
+  basic_style()
+  font_style()
+  arrow_style()
+}
+
+skinparam sequence {
+  font_style()
+  arrow_style()
+
+  lifeLineBorderColor $ACCENT
+  lifeLineBackgroundColor FFF
+}
+
+skinparam boundary {
+  accent_style()
+  font_style()
+}
+
+skinparam control {
+  accent_style()
+  font_style()
+}
+
+skinparam entity {
+  accent_style()
+  font_style()
+}
+
+' State diagrams
+
+skinparam state {
+  basic_style()
+  font_style()
+  arrow_style()
+  startColor $ACCENT
+  endColor $ACCENT
+}
+
+' Object diagrams
+
+skinparam object {
+  basic_style()
+  font_style()
+  arrow_style()
+}
+
+' Common
+
+skinparam note {
+  accent_style()
+  font_style()
+}
+
+skinparam cloud {
+  basic_style()
+  font_style()
+  arrow_style()
+}
+
+skinparam rectangle {
+  basic_style()
+  font_style()
+}
+
+skinparam storage {
+  basic_style()
+  font_style()
+}
+
+@enduml
