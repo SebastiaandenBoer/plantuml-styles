@@ -8,34 +8,6 @@
 !$FONTSIZE = 12
 !endif
 
-!ifdef CGI-DARK
-!$ACCENT = "e31937"
-!$ACCENTDARK = "991f3d"
-skinparam stereotypeCBackgroundColor $ACCENT
-!define DARKSTYLE
-!endif
-
-!ifdef CGI-LIGHT
-!$ACCENT = "e31937"
-!$ACCENTDARK = "991f3d"
-skinparam stereotypeCBackgroundColor $ACCENTDARK
-!define LIGHTSTYLE
-!endif
-
-!ifdef NS-DARK
-skinparam backgroundColor 777
-!$ACCENT = "e5be03"
-!$ACCENTDARK = "f2a200"
-skinparam stereotypeCBackgroundColor $ACCENT
-!define DARKSTYLE
-!endif!if (%not(%variable_exists("$FONTNAME")))
-!$FONTNAME = "Arial"
-!endif
-
-!if (%not(%variable_exists("$FONTSIZE")))
-!$FONTSIZE = 12
-!endif
-
 !ifdef CGI
 !$ACCENT = "e31937"
 !$ACCENT_FOREGROUND = "fff"
